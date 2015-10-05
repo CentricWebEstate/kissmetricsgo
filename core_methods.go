@@ -1,7 +1,6 @@
 package kmgo
 
 import "net/http"
-import "fmt"
 import "net/url"
 
 func NewKM(key string) *KM {
@@ -36,7 +35,6 @@ func (ev *KMEvent) Send() (*KMEvent, error) {
 
 	request, err := http.NewRequest("GET", address, nil)
 	if err != nil {
-		fmt.Sprintf("%+v", err)
 		return nil, err
 	}
 
@@ -45,6 +43,6 @@ func (ev *KMEvent) Send() (*KMEvent, error) {
 	if err != nil {
 		return nil, err
 	}
-	fmt.Sprintf("%+v", response)
+
 	return ev, nil
 }
