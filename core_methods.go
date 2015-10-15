@@ -39,7 +39,7 @@ func (ev *KMEvent) Send() (*KMEvent, error) {
 	}
 
 	client := &http.Client{}
-	response, err := client.Do(request)
+	_, err = client.Do(request)
 	if err != nil {
 		return nil, err
 	}
